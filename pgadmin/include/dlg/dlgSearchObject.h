@@ -74,6 +74,7 @@ class searchObjectFactory : public contextActionFactory
 {
 public:
 	searchObjectFactory(menuFactoryList *list, wxMenu *mnu, ctlMenuToolbar *toolbar);
+
 	wxWindow *StartDialog(frmMain *form, pgObject *obj);
 	bool CheckEnable(pgObject *obj);
 

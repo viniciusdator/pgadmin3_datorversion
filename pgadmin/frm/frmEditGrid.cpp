@@ -1332,8 +1332,10 @@ void frmEditGrid::ShowForm(bool filter)
 	{
 		if (filter)
 		{
-			dlgEditGridOptions *winOptions = new dlgEditGridOptions(this, connection, tableName, sqlGrid);
-			abort = !(winOptions->ShowModal());
+			//Show(false);
+			//dlgEditGridOptions *winOptions = new dlgEditGridOptions(this, connection, tableName, sqlGrid);
+			//abort = !(winOptions->ShowModal());
+			SetFilter("false");
 		}
 		if (abort)
 		{

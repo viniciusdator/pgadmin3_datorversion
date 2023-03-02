@@ -35,6 +35,7 @@
 #define btnRemove                   CTRL_BUTTON("wxID_REMOVE")
 #define btnValidate                 CTRL_BUTTON("btnValidate")
 #define cboColumns                  CTRL_COMBOBOX("cboColumns")
+#define cboColumns2                 CTRL_COMBOBOX("cboColumns2")
 #define lstSortCols                 CTRL_LISTVIEW("lstSortCols")
 #define pnlSort                     CTRL_PANEL("pnlSort")
 #define pnlFilter                   CTRL_PANEL("pnlFilter")
@@ -74,9 +75,10 @@ dlgEditGridOptions::dlgEditGridOptions(frmEditGrid *win, pgConn *conn, const wxS
 	int cols = grid->GetNumberCols();
 	long x;
 
-	for (x = 0; x < cols; x++)
+	for (x = 0; x < cols; x++){
 		cboColumns->Append(grid->GetColLabelValue(x).BeforeFirst('\n'));
-
+		cboColumns2->Append(grid->GetColLabelValue(x).BeforeFirst('\n'));
+	}
 	// Setup the buttons
 	wxCommandEvent nullEvent;
 	OnCboColumnsChange(nullEvent);

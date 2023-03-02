@@ -298,9 +298,10 @@ void frmMain::CreateMenus()
 	LoadPluginUtilities();
 
 	//--------------------------
+	new searchObjectFactory(menuFactories, fileMenu, toolBar);
 	fileMenu->Append(MNU_SAVEDEFINITION, _("&Save Definition..."), _("Save the SQL definition of the selected object."));
 	fileMenu->AppendSeparator();
-	new addServerFactory(menuFactories, fileMenu, toolBar);
+	//new addServerFactory(menuFactories, fileMenu, toolBar);
 
 	viewMenu->Append(MNU_OBJECTBROWSER, _("&Object browser\tCtrl-Alt-O"),     _("Show or hide the object browser."), wxITEM_CHECK);
 	viewMenu->Append(MNU_SQLPANE, _("&SQL pane\tCtrl-Alt-S"),     _("Show or hide the SQL pane."), wxITEM_CHECK);
@@ -391,7 +392,7 @@ void frmMain::CreateMenus()
 	new resetFunctionStatsFactory(menuFactories, editMenu, 0);
 	new reassignDropOwnedFactory(menuFactories, editMenu, 0);
 	new moveTablespaceFactory(menuFactories, editMenu, 0);
-	new searchObjectFactory(menuFactories, editMenu, 0);
+	//new searchObjectFactory(menuFactories, editMenu, 0);
 	/*ABDUL:BEGIN 27 Feb 2020: push drop menu away from create*/
 	new dropFactory(menuFactories, editMenu, toolBar);
 	new dropCascadedFactory(menuFactories, editMenu, 0);
@@ -445,6 +446,7 @@ void frmMain::CreateMenus()
 	new editGridFilteredFactory(menuFactories, viewDataMenu, toolBar);
 
 	new maintenanceFactory(menuFactories, toolsMenu, toolBar);
+	new addServerFactory(menuFactories, fileMenu, toolBar);
 
 	new backupFactory(menuFactories, toolsMenu, 0);
 	new backupGlobalsFactory(menuFactories, toolsMenu, 0);

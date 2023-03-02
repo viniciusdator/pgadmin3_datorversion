@@ -342,7 +342,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>C:\wxWidgets-3.0.5\lib\vc_x64_dll\mswud;C:\wxWidgets-3.0.5\include;C:\Program Files\PostgreSQL\12\include;C:\libssh2-1.10.0\include;C:\Users\Estudos\Documents\GitHub\pgadmin3-lts\pgadmin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\wxWidgets-3.0.5\lib\vc_x64_dll\mswud;C:\wxWidgets-3.0.5\include;C:\Program Files\PostgreSQL\12\include;C:\libssh2-1.10.0\include;C:\Users\Estudos\Documents\GitHub\pgadmin3_datorversion\pgadmin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>EMBED_XRC;WIN32;_DEBUG;_CRT_SECURE_NO_DEPRECATE=1;_CRT_NON_CONFORMING_SWPRINTFS=1;_SCL_SECURE_NO_WARNINGS=1;__WXMSW__;WXUSINGDLL;_UNICODE;_WINDOWS;HAVE_OPENSSL_CRYPTO;HAVE_CONNINFO_PARSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>

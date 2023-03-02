@@ -45,7 +45,7 @@
                 <object class="sizeritem">
                   <object class="wxComboBox" name="cboColumns">
                     <content/>
-                    <style>wxCB_READONLY|wxCB_DROPDOWN</style>
+                    <style>wxCB_DROPDOWN</style>
                     <tooltip>Select a column to add to the sort list.</tooltip>
                   </object>
                   <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL|wxTOP|wxLEFT|wxRIGHT</flag>
@@ -109,6 +109,22 @@
                     <tooltip>Enter the filter string to apply to the data. SQL syntax should be used as the string will be used as a 'WHERE' clause.</tooltip>
                   </object>
                   <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                  <border>4</border>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxStaticText" name="lblAvailCols2">
+                    <label>Available Columns</label>
+                  </object>
+                  <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL|wxTOP|wxLEFT|wxRIGHT</flag>
+                  <border>4</border>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxComboBox" name="cboColumns2">
+                    <content/>
+                    <style>wxCB_DROPDOWN</style>
+                    <tooltip>Select a column to add to the sort list.</tooltip>
+                  </object>
+                  <flag>wxEXPAND|wxALIGN_CENTER_VERTICAL|wxTOP|wxLEFT|wxRIGHT</flag>
                   <border>4</border>
                 </object>
                 <object class="sizeritem">
