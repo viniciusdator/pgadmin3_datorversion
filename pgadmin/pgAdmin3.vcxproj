@@ -222,7 +222,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>C:\wxWidgets-3.0.5\lib\vc_x64_dll\mswud;C:\wxWidgets-3.0.5\include;C:\Program Files\PostgreSQL\12\include;C:\libssh2-1.10.0\include;C:\Users\Estudos\Documents\GitHub\pgadmin3-lts\pgadmin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\wxWidgets-3.0.5\lib\vc_x64_dll\mswud;C:\wxWidgets-3.0.5\include;C:\Program Files\PostgreSQL\12\include;C:\libssh2-1.10.0\include;C:\Users\Estudos\Documents\GitHub\pgadmin3_datorversion\pgadmin\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE=1;HAVE_OPENSSL_CRYPTO;LIBSSH2_OPENSSL;NDEBUG;WIN32;_WINDOWS;__WINDOWS__;__WIN95__;__WIN32__;WINVER=0x0400;STRICT;__WXMSW__;WXUSINGDLL;wxUSE_UNICODE=1;UNICODE;EMBED_XRC;PG_SSL;HAVE_CONNINFO_PARSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>

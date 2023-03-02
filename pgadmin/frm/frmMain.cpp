@@ -444,7 +444,8 @@ void frmMain::CreateMenus()
 	new editGridLimitedFactory(menuFactories, viewDataMenu, toolBar, 100, false);
 	new editGridFactory(menuFactories, viewDataMenu, toolBar);
 	new editGridFilteredFactory(menuFactories, viewDataMenu, toolBar);
-
+	toolsMenu->AppendSeparator();
+	
 	new maintenanceFactory(menuFactories, toolsMenu, toolBar);
 	new addServerFactory(menuFactories, fileMenu, toolBar);
 
