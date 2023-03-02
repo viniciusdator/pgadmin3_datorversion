@@ -21,7 +21,7 @@
 #include "utils/misc.h"
 #include "ctl/ctlListView.h"
 #include "ctl/ctlMenuToolbar.h"
-#include "../include/images/vacuum.pngc"
+
 
 #define txtPattern        CTRL_TEXT("txtPattern")
 #define cbType            CTRL_COMBOBOX("cbType")
@@ -971,12 +971,12 @@ void dlgSearchObject::OnCancel(wxCommandEvent &ev)
 		Destroy();
 }
 
-#include "images/connect.pngc"
+#include "images/edit_find.pngc"
 searchObjectFactory::searchObjectFactory(menuFactoryList *list, wxMenu *mnu, ctlMenuToolbar *toolbar) : contextActionFactory(list)
 {
 	//mnu->Append(id, _("&Add Server..."), _("Add a connection to a server."));
 	mnu->Append(id, _("&Search objects...\tCtrl-G"), _("Search database for specific objects"));
-	toolbar->AddTool(id, _("Add Server"), *connect_png_bmp, _("Add a connection to a server."), wxITEM_NORMAL);
+	toolbar->AddTool(id, _("Search objects"), *edit_find_png_bmp, _("Add a connection to a server."), wxITEM_NORMAL);
 
 	//toolbar->AddTool(id, wxEmptyString, *vacuum_png_bmp, _("Maintain the current database or table."), wxITEM_NORMAL);
 }
