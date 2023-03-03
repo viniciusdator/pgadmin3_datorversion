@@ -538,7 +538,7 @@ frmQuery::frmQuery(frmMain *form, const wxString &_title, pgConn *_conn, const w
 
 	// Setup SQL editor notebook NBP_SQLEDTR
 	sqlNotebook->AddPage(pnlQuery, _("SQL Editor"));
-	sqlNotebook->AddPage(controller->getViewContainer(), _("Graphical Query Builder"));
+	//sqlNotebook->AddPage(controller->getViewContainer(), _("Graphical Query Builder"));
 	sqlNotebook->SetSelection(0);
 
 	outputPane->AddPage(sqlResult, _("Data Output"));
