@@ -295,7 +295,7 @@ void frmMain::CreateMenus()
 	menuFactories = new menuFactoryList();
 
 	// Load plugins - must do this after creating the menus and the factories
-	LoadPluginUtilities();
+	//LoadPluginUtilities();
 
 	//--------------------------
 	new searchObjectFactory(menuFactories, fileMenu, toolBar);
@@ -437,17 +437,18 @@ void frmMain::CreateMenus()
 	new reportObjectDependentsFactory(menuFactories, reportMenu, 0);
 	new reportObjectListFactory(menuFactories, reportMenu, 0);
 
-
 	toolsMenu->AppendSeparator();
 
 	new editGridLimitedFactory(menuFactories, viewDataMenu, toolBar, 100, true);
 	new editGridLimitedFactory(menuFactories, viewDataMenu, toolBar, 100, false);
 	new editGridFactory(menuFactories, viewDataMenu, toolBar);
 	new editGridFilteredFactory(menuFactories, viewDataMenu, toolBar);
-	toolsMenu->AppendSeparator();
 	
-	new maintenanceFactory(menuFactories, toolsMenu, toolBar);
+	toolBar->AddSeparator();
+	
 	new addServerFactory(menuFactories, fileMenu, toolBar);
+	new maintenanceFactory(menuFactories, toolsMenu, toolBar);
+	
 
 	new backupFactory(menuFactories, toolsMenu, 0);
 	new backupGlobalsFactory(menuFactories, toolsMenu, 0);
@@ -470,7 +471,7 @@ void frmMain::CreateMenus()
 	new serverStatusFactory(menuFactories, toolsMenu, 0);
 
 	// Add the plugin toolbar button/menu
-	new pluginButtonMenuFactory(menuFactories, pluginsMenu, toolBar, pluginUtilityCount);
+	//new pluginButtonMenuFactory(menuFactories, pluginsMenu, toolBar, pluginUtilityCount);
 
 	//--------------------------
 	toolBar->AddSeparator();
