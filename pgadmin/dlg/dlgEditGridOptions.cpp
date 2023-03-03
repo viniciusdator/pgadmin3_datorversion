@@ -71,14 +71,22 @@ dlgEditGridOptions::dlgEditGridOptions(frmEditGrid *win, pgConn *conn, const wxS
 	// Icon
 	SetIcon(*sortfilter_png_ico);
 	RestorePosition();
+	
 
 	int cols = grid->GetNumberCols();
 	long x;
+	wxArrayString tmp;
+	wxString item;
 
 	for (x = 0; x < cols; x++){
-		cboColumns->Append(grid->GetColLabelValue(x).BeforeFirst('\n'));
-		cboColumns2->Append(grid->GetColLabelValue(x).BeforeFirst('\n'));
+		item = grid->GetColLabelValue(x).BeforeFirst('\n');
+
+		cboColumns->Append(item);
+		cboColumns2->Append(item);
+		tmp.Add(item);
 	}
+	
+	cboColumns2->AutoComplete(tmp);
 	// Setup the buttons
 	wxCommandEvent nullEvent;
 	OnCboColumnsChange(nullEvent);
