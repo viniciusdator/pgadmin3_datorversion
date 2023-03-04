@@ -50,9 +50,12 @@ BEGIN_EVENT_TABLE(dlgEditGridOptions, pgDialog)
 	EVT_BUTTON               (XRCID("btnDesc"),     dlgEditGridOptions::OnDesc)
 	EVT_BUTTON               (XRCID("btnValidate"), dlgEditGridOptions::OnValidate)
 	EVT_COMBOBOX             (XRCID("cboColumns"),  dlgEditGridOptions::OnCboColumnsChange)
+	EVT_COMBOBOX             (XRCID("cboColumns2"), dlgEditGridOptions::OnDoubleClick)
 	EVT_LIST_ITEM_SELECTED   (XRCID("lstSortCols"), dlgEditGridOptions::OnLstSortColsChange)
 	EVT_LIST_ITEM_DESELECTED (XRCID("lstSortCols"), dlgEditGridOptions::OnLstSortColsChange)
 	EVT_STC_MODIFIED		 (XRCID("sqlFilter"),   dlgEditGridOptions::OnFilterChange)
+	
+	
 #ifdef __WXMAC__
 	EVT_SIZE(                                       dlgEditGridOptions::OnChangeSize)
 #endif
@@ -87,6 +90,8 @@ dlgEditGridOptions::dlgEditGridOptions(frmEditGrid *win, pgConn *conn, const wxS
 	}
 	
 	cboColumns2->AutoComplete(tmp);
+	
+
 	// Setup the buttons
 	wxCommandEvent nullEvent;
 	OnCboColumnsChange(nullEvent);
@@ -108,6 +113,7 @@ dlgEditGridOptions::dlgEditGridOptions(frmEditGrid *win, pgConn *conn, const wxS
 	// Setup the filter SQL box. This is an XRC 'unknown' control so must
 	// be manually created and attache to the XRC global resource.
 	filter->SetText(parent->GetFilter());
+	
 
 	// Get the current sort columns, and populate the listbox.
 	// The current columns will be parsed char by char to allow us
@@ -199,6 +205,17 @@ dlgEditGridOptions::~dlgEditGridOptions()
 void dlgEditGridOptions::OnFilterChange(wxStyledTextEvent &ev)
 {
 	btnValidate->Enable(!filter->GetText().Trim().IsEmpty());
+}
+
+void dlgEditGridOptions::OnDoubleClick(wxCommandEvent& ev)
+{
+	if (filter->GetLineText(0) == "false")
+	{
+		filter->LineDelete();
+		filter->AppendText(cboColumns2->GetStringSelection() + " = ");
+	}
+	else
+		filter->AppendText("\nAND " + cboColumns2->GetStringSelection() + " = ");
 }
 
 void dlgEditGridOptions::OnRemove(wxCommandEvent &ev)

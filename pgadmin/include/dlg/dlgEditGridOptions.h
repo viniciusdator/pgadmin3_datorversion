@@ -48,6 +48,8 @@ private:
 #endif
 
 	void OnFilterChange(wxStyledTextEvent &ev);
+	//void OnDoubleClick(wxMouseEvent& ev);
+	void OnDoubleClick(wxCommandEvent &ev);
 	void OnCancel(wxCommandEvent &ev);
 	void OnClose(wxCloseEvent &ev);
 	void OnOK(wxCommandEvent &ev);
